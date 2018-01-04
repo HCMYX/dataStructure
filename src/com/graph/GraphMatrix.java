@@ -7,16 +7,17 @@ public class GraphMatrix {
 	//最大值
 	public static final int MaxValue=65535;
 	//保存顶点信息
-	char[] vertex=new char[MaxNum];
+	String[] vertex=new String[MaxNum];
 	//图结构类型  0无向图  1有向图
-	int graphType;
+	int graphType=0;
 	//顶点的个数
-	int vertexNum;
+	int vertexNum=0;
 	//边的数量
-	int edegNum;
+	int edegNum=0;
 	//保存边的权
 	int[][] edgeWeight=new int[MaxNum][MaxNum];
 	//遍历标志
 	int[] isTrav=new int[MaxNum];
+	
 	
 }

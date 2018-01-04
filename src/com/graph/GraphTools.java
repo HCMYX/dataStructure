@@ -21,7 +21,6 @@ public class GraphTools {
 				break;
 			}
 			gm.vertex[i] = vertex;
-			gm.vertexNum++;
 		}
 		System.out.println("输入构成各顶点的边及权值");
 		for (i = 0; i < gm.edegNum; i++) {
@@ -37,4 +36,44 @@ public class GraphTools {
 			}
 		}
 	}
+	
+	//清空图
+	public void clearGraph(GraphMatrix gm){
+		int i,j;
+		for (i = 0; i <gm.vertexNum; i++) {
+			for (j = 0; j <gm.vertexNum; j++) {
+				gm.edgeWeight[i][j]=GraphMatrix.MaxNum;
+			}
+		}
+	}
+	
+	//显示图
+	public void outGraph(GraphMatrix gm){
+		int i,j;
+		for (i = 0; i <gm.vertexNum; i++) {
+			System.out.printf("\t%c",gm.vertex[i]);
+		}
+		System.out.println("");
+		for (j = 0; j <gm.vertexNum; j++) {
+			System.out.printf("%c",gm.vertex[i]);
+			for (j = 0; j < gm.vertexNum; j++) {
+				if (gm.edgeWeight[i][j]==GraphMatrix.MaxNum) {
+					System.out.println("\tZ");
+				}else {
+					System.out.printf("\t%d",gm.edgeWeight[i][j]);
+				}
+			}
+			System.out.println("");
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
