@@ -4,6 +4,8 @@ public class GraphMatrix {
 
 	//图最大顶点数
 	public static final int MaxNum=20;
+	//最大边数量
+	public static final int MaxEdegNum=2000;
 	//最大值
 	public static final int MaxValue=65535;
 	//保存顶点信息
