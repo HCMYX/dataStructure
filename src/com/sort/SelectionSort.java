@@ -1,5 +1,6 @@
 package com.sort;
 
+//选择排序
 public class SelectionSort {
 
 	public int[] sort(int[] arr) {
