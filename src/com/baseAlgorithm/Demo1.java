@@ -7,6 +7,7 @@ package com.baseAlgorithm;
 //第三个月 2对兔子
 //第四个月 3对兔子
 //第五个月 5对兔子
+//
 // 第n月 有多少个兔子
 public class Demo1 {
 
