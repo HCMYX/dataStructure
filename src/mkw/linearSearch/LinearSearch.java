@@ -9,8 +9,12 @@ public class LinearSearch {
     private LinearSearch(){}
 
     public static void main(String[] args) {
-        Integer[] intArr =  {55,22,14,56,23,123,63};
-        System.out.println(LinearSearch.find(intArr,23));
+
+        Student[] stArr = {new Student("zhangsan"),
+                new Student("lisi"),
+                new Student("wanger")};
+
+        System.out.println(LinearSearch.find(stArr,new Student("lisi")));
     }
 
     /**
