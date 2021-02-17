@@ -1,6 +1,8 @@
 package mkw.linearSearch;
 
 
+import mkw.util.ArrayGenerator;
+
 /**
  * 线性查找算法  在一个数组中查找元素
  */
