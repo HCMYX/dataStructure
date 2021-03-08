@@ -9,12 +9,11 @@ class LinkedListQueueTest {
     @Test
     public void test01(){
         Node n1 = new Node();
-        Node n2 = new Node();
+        Node n2 = n1;
         Node n = new Node();
         n.setData("123");
         n1.setLeft(n);
-        n2.setLeft(n1);
-        n1.getLeft().setData("2321");
+        n2.getLeft().setData("2321");
         n1.setLeft(null);
         n2.setLeft(n);
     }
