@@ -1,4 +1,4 @@
-package mkw.sort;
+package mkw.sort.MergeSort;
 
 import com.sun.corba.se.spi.extension.CopyObjectPolicy;
 import mkw.array.Array;
@@ -51,6 +51,5 @@ public class MergeSort {
                 j++;
             }
         }
-
     }
 }

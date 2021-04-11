@@ -1,4 +1,4 @@
-package mkw.sort;
+package mkw.sort.MergeSort;
 
 import java.util.Arrays;
 

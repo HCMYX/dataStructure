@@ -1,5 +1,7 @@
 package mkw.sort;
 
+import mkw.sort.MergeSort.MergeSort;
+
 public class SortingHelper {
 
     private SortingHelper(){}
