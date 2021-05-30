@@ -1,41 +1,62 @@
 package mkw.sort.QuickSort;
 
-import java.math.BigDecimal;
+
+import mkw.util.ArrayGenerator;
+
+import java.util.Random;
 
 /**
  * 快速排序
+ * 将小于V的放左边，大于V的放右边
  */
 public class QuickSort {
 
-    private QuickSort(){}
-
-    public static <E extends Comparable<E>> void sort(E[] arr){
-
+    private QuickSort() {
     }
 
-    private static <E extends Comparable<E>> void sort(E[] arr,int l, int r){
-        if ((l >= r)) return;
-        int p = partition(arr,l,r);
-        sort(arr,l,p-1);
-        sort(arr,p+1,r);
+    public static final String a = "123";
+
+    public static <E extends Comparable<E>> void sort(E[] arr) {
+        sort(arr, 0, arr.length - 1);
     }
 
-    public static <E extends Comparable<E>> int partition(E[] arr,int l,int r){
+    private static <E extends Comparable<E>> void sort(E[] arr, int l, int r) {
+        if (l >= r) return;
+        int p = partition(arr, l, r);
+        sort(arr, l, p - 1);
+        sort(arr, p + 1, r);
+    }
+
+
+    public static <E extends Comparable<E>> int partition(E[] arr, int l, int r) {
+        //生成随机索引 在l-r之间
+        int p =l + (new Random()).nextInt(r-l+1);
+        swap(arr,l,p);
         // arr[l+1,j] < v; arr[j+1,r] >= v
         int j = l;
-        for (int i = l + 1; i<=r; i++){
-            if (arr[i].compareTo(arr[l]) < 0){
+        for (int i = l + 1; i <= r; i++) {
+            if (arr[i].compareTo(arr[l]) < 0) {
                 j++;
-                swap(arr,i,j);
+                swap(arr, i, j);
             }
         }
-        swap(arr,l,j);
+        swap(arr, l, j);
         return j;
     }
 
-    private static <E> void swap(E[] arr, int i, int j){
-       E t = arr[i];
-       arr[i] = arr[j];
-       arr[j] = t;
+    private static <E> void swap(E[] arr, int i, int j) {
+        E t = arr[i];
+        arr[i] = arr[j];
+        arr[j] = t;
+    }
+
+    public static void main(String[] args) {
+        int n = 100;
+        Integer[] arr = ArrayGenerator.generateRandomArray(n,n);
+        QuickSort.sort(arr);
+        System.out.println(arr.toString());
     }
 }
+
+
+
