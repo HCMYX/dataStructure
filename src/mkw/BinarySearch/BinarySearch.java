@@ -116,10 +116,69 @@ public class BinarySearch {
         return l;
     }
 
+    /**
+     * 寻找<target的最大值
+     *
+     */
+    public static <E extends Comparable<E>> int lower(E[] data,E target){
+        int l = -1,r = data.length - 1;
+        //在data[l,r中寻找解]
+        while (l < r){
+            // 当 r = l + 1 的时候这种写法会出现死循环，因为除以2是向下取整
+            // int mid = l + (r - l) / 2;
+            int mid = l + (r - l + 1)/2;
+            if (data[mid].compareTo(target) < 0){
+                l = mid;
+            }else {
+                r = mid - 1;
+            }
+        }
+        return l;
+    }
+
+    /**
+     * 如果数组中存在元素，返回最小索引
+     * 如果不存在元素，返回小于索引的最大值
+     * @param data
+     * @param target
+     * @param <E>
+     * @return
+     */
+    public static <E extends Comparable<E>> int lower_floor(E[] data,E target) {
+        //本质就是小于target的最大索引 右边的一个数。
+        int l = lower(data,target);
+        if (l + 1 < data.length && data[l + 1 ].compareTo(target) == 0){
+            l ++ ;
+        }
+        return l;
+    }
+
+    /**
+     *  如果数组中存在元素，返回最大索引
+     *  如果不存在元素，返回最大索引
+     *  < = target的最大索引
+     * @param data
+     * @param target
+     * @param <E>
+     * @return
+     */
+    public static <E extends Comparable<E>> int upper_floor(E[] data,E target) {
+        int l = -1, r = data.length - 1;
+        while (l < r) {
+            int mid = l + (r - l + 1)/2;
+            if (data[mid].compareTo(target) > 0){
+                r = mid - 1;
+            }else {
+                l = mid;
+            }
+        }
+        return l; 
+    }
+
     public static void main(String[] args) {
-        Integer[] arr = {1, 1, 3, 3, 5, 5};
-        for(int i = 0; i <= 6; i ++)
-            System.out.print(BinarySearch.lower_ceil(arr, i) + " ");
+        Integer[] arr = {1, 1, 3, 3, 5, 5,7,7};
+        for(int i = 0; i <= 8; i ++)
+            System.out.print(BinarySearch.lower_floor(arr, i) + " ");
         System.out.println();
     }
 }
